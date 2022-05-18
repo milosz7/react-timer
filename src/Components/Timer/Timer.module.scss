@@ -1,0 +1,26 @@
+@import '../../styles/settings.scss';
+
+.timer {
+  margin: auto;
+  border: 3px solid $color-light;
+  border-radius: $radius;
+  width: max-content;
+  text-align: center;
+  padding: $base-size;
+}
+
+.title {
+  font-size: 1.25rem;
+}
+
+.timerText {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: $base-size * 0.5;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+}

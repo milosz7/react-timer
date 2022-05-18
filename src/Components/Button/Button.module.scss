@@ -1,0 +1,15 @@
+@import '../../styles/settings.scss';
+
+.button {
+  background-color: $color-success;
+  font-family: inherit;
+  border: 0;
+  color: $color-light;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: $base-size;
+  min-width: 60px;
+  margin: $base-size;
+  cursor: pointer;
+  border-radius: $radius;
+}
