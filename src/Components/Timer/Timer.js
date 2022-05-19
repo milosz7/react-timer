@@ -13,7 +13,9 @@ const Timer = () => {
     const seconds = ('0' + Math.floor((time - (Math.floor(time / 60000) * 60000)) / 1000)).slice(-2);
     const minutes = ('0' + Math.floor((time - (Math.floor(time / 3600000) * 3600000)) / 60000)).slice(-2);
     const hours = ('0' + Math.floor(time / 3600000)).slice(-2);
-    setDisplayableTime(`${hours}:${minutes}:${seconds}.${miliseconds}`);
+    setTimeout(() => {
+      setDisplayableTime(`${hours}:${minutes}:${seconds}.${miliseconds}`);
+    }, 0);
   }, [time]);
 
   const startCount = () => {
