@@ -19,23 +19,21 @@ const Timer = () => {
   }, [time]);
 
   const startCount = () => {
-    if (intervalStatus === null) {
       setIntervalStatus(
       setInterval(() => {
       setTime(prevTime => prevTime + 1); 
     }, 1));
-    }
   };
 
   const stopCount = () => {
-    if (intervalStatus !== null) {
+    if (intervalStatus) {
       clearInterval(intervalStatus);
       setIntervalStatus(null);
     }
   };
 
   const resetCount = () => {
-    if (intervalStatus !== null) {
+    if (intervalStatus) {
       clearInterval(intervalStatus);
       setIntervalStatus(null);
     }
@@ -48,7 +46,7 @@ const Timer = () => {
       <h1 className={styles.title}>a simple counter.</h1>
       <p className={styles.timerText}>{displayableTime}</p>
       <div className={styles.buttonBox}>
-      <Button action={startCount}>Start</Button>
+      <Button action={startCount} disabled={intervalStatus}>Start</Button>
       <Button action={stopCount}>Stop</Button>
       <Button action={resetCount}>Reset</Button>
       </div>
