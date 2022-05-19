@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import styles from './Timer.module.scss';
 import Button from "../Button/Button";
 
+const timeConversions =  { msToSecond: 1000, msToMinute : 60000, msToHour: 3600000 }
+
 const Timer = () => {
 
   const [time, setTime] = useState(0);
@@ -9,7 +11,6 @@ const Timer = () => {
   const [intervalStatus, setIntervalStatus] = useState(null);
 
   useEffect(() => {
-    const timeConversions =  { msToSecond: 1000, msToMinute : 60000, msToHour: 3600000 }
     const {msToSecond, msToMinute, msToHour} = timeConversions;
     const miliseconds = ('00' + time).slice(-3);
     const seconds = ('0' + Math.floor((time - (Math.floor(time / msToMinute) * msToMinute)) / msToSecond)).slice(-2);
